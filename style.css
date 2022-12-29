@@ -1,0 +1,68 @@
+/* css code goes here */
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bt{
+    margin: 1.5rem;
+}
+.btn{
+    padding: 0.6rem 0.9rem;
+    margin: 0 1rem;
+    border-radius: 5px;
+    font-weight: 700;
+    border-color: whitesmoke;
+    box-shadow: 8px 8px 4px gainsboro;
+}
+.btn:hover{
+    box-shadow: 8px 8px 10px gainsboro;
+    color: white;
+    cursor: pointer;    
+}
+.start{
+    background-color: rgb(142, 211, 39);
+}
+.reset{
+    background-color: rgba(229, 20, 62,0.8);
+}
+.container{
+    width: 450px;
+    height: 450px;
+    /* outline: 2px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hide{
+    display: none;
+}
+#audio{
+    margin: 1rem 0;
+}
+
+.square{
+    width: 150px;
+    height: 150px;
+    outline: 2px solid rgb(255, 255, 255);
+    background-color:grey;
+}
+.mole{
+    background-image: url(https://scontent.fblr17-1.fna.fbcdn.net/v/t1.18169-9/17759925_1290417197703318_8168277042705458975_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=S2SFdGo0i48AX8It6br&_nc_ht=scontent.fblr17-1.fna&oh=00_AfAfEprajrr_mIiDIvYs3fFcuopd_RboUxiTFmX51TJgCA&oe=63C64DBC);
+    background-size: contain;
+}
+
+@media (max-width:500px) {
+    .container{
+        width: 300px;
+        height: 300px;
+    }
+    .square{
+        width: 100px;
+        height: 100px;
+        outline: 2px solid rgb(255, 255, 255);
+        background-color:grey;
+    }
+}
