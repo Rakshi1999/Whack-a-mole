@@ -83,11 +83,11 @@ let clickBGMusic = new Audio("pixel-death-66829.mp3");
 let launchPageBG = new Audio("space_line-27593.mp3");
 window.addEventListener("load",()=>{
     launchPageBG.play();
-    music.innerText = "Mute"
+    music.innerText = "Mute";
 });
 
 let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
-
+// let gameOverAfterClick = new Audio("failure-drum-sound-effect-2-7184.mp3");
 music.addEventListener("click",()=>{
     launchPageBG.pause();
 })
