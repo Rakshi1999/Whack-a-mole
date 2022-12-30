@@ -15,8 +15,8 @@
  <button class="btn music" id="music"></button>
 </div>
 <div id="audio">
-    <select required>
-        <option selected value="easy">Easy</option>
+    <select id="level" required onchange="modeHandler()">
+        <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
     </select>

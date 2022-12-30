@@ -7,7 +7,19 @@ let divs = document.querySelectorAll(".square");
 let time = document.getElementById("time-left");
 let leftTimeId;
 let music = document.getElementById("music");
+const element = document.getElementById("level");
+let moleTimer=750;
 
+
+function modeHandler(){
+   if(element.value ==="medium"){
+    moleTimer=575;
+   }else if(element.value === "hard"){
+    moleTimer=350;
+   }else{
+    moleTimer=750;
+   }
+}
 
 divs.forEach((div)=>{
     div.addEventListener("click",()=>{click(div)});
@@ -45,7 +57,8 @@ function stop(){
 
 btn.onclick=()=>{
     btn.setAttribute("disabled",true);
-    timerId = setInterval(changeMole,700);
+    element.setAttribute("disabled",true);
+    timerId = setInterval(changeMole,moleTimer);
     leftTimeId = setInterval(()=>{
         let initial = time.innerText;
         let final = parseInt(initial) - 1;
@@ -70,6 +83,7 @@ resetbtn.onclick=()=>{
     time.style.color="black";
     document.getElementById("score").innerText = 0;
     btn.removeAttribute("disabled");
+    element.removeAttribute("disabled");
 }
 
 let gameBGMusic = new Audio("8bit-music-for-game-68698.mp3");
