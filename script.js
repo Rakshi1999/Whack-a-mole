@@ -86,6 +86,7 @@ resetbtn.onclick=()=>{
     element.removeAttribute("disabled");
 }
 
+
 let gameBGMusic = new Audio("8bit-music-for-game-68698.mp3");
 btn.addEventListener("click",()=>{
     launchPageBG.pause();
@@ -99,7 +100,6 @@ window.addEventListener("load",()=>{
     launchPageBG.play();
     music.innerText = "Mute";
 });
-
 let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
 // let gameOverAfterClick = new Audio("failure-drum-sound-effect-2-7184.mp3");
 music.addEventListener("click",()=>{
