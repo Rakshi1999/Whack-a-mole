@@ -1,15 +1,19 @@
 // javascript code goes here
-let btn = document.getElementById("start");
-let resetbtn = document.getElementById("reset");
+const btn = document.getElementById("start");
+const resetbtn = document.getElementById("reset");
 let timerId;
-let box = document.getElementsByClassName("square");
-let divs = document.querySelectorAll(".square");
-let time = document.getElementById("time-left");
+const box = document.getElementsByClassName("square");
+const divs = document.querySelectorAll(".square");
+const time = document.getElementById("time-left");
 let leftTimeId;
 let music = document.getElementById("music");
 const element = document.getElementById("level");
+const table = document.getElementById("scoreTable");
 let moleTimer=750;
 let sl=0;
+let clickBGMusic = new Audio("pixel-death-66829.mp3");
+let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
+let muted = false;
 
 function modeHandler(){
    if(element.value ==="medium"){
@@ -37,7 +41,9 @@ function click(div){
             let val = document.getElementById("score");
             let final = (parseInt(val.innerText))+1;
             val.innerText=final;
-            clickBGMusic.play();
+            if(!muted){
+             clickBGMusic.play();
+            }
             }
         }
 }
@@ -66,8 +72,10 @@ btn.onclick=()=>{
             time.style.color="red";
         }
         if(final<=0){
-            gameBGMusic.pause();
-            gameOverBG.play();
+            if(!muted){
+                gameBGMusic.pause();
+                gameOverBG.play();
+            }
             stop();
             addScore();
         }
@@ -90,24 +98,16 @@ resetbtn.onclick=()=>{
 
 let gameBGMusic = new Audio("8bit-music-for-game-68698.mp3");
 btn.addEventListener("click",()=>{
-    launchPageBG.pause();
-    gameBGMusic.play();
+    if(!muted){
+        gameBGMusic.play();
+    }
 });
 
-let clickBGMusic = new Audio("pixel-death-66829.mp3");
-
-let launchPageBG = new Audio("space_line-27593.mp3");
-window.addEventListener("load",()=>{
-    launchPageBG.play();
-    music.innerText = "Mute";
-});
-let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
-// let gameOverAfterClick = new Audio("failure-drum-sound-effect-2-7184.mp3");
 music.addEventListener("click",()=>{
-    launchPageBG.pause();
+   muted = true;
+   gameBGMusic.pause();
+   gameOverBG.pause();
 })
-
-const table = document.getElementById("scoreTable");
 
 function addScore(){
     let points = document.getElementById("score");
