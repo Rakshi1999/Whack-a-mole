@@ -103,10 +103,21 @@ btn.addEventListener("click",()=>{
     }
 });
 
+window.addEventListener("load",()=>{
+    music.innerText = "Mute";
+})
 music.addEventListener("click",()=>{
-   muted = true;
-   gameBGMusic.pause();
-   gameOverBG.pause();
+    if(!muted){
+       muted = true;
+       gameBGMusic.pause();
+       gameOverBG.pause();
+       music.innerText="Un-Mute";
+    }else{
+        muted = false;
+        // gameBGMusic.pause();
+        // gameOverBG.pause();
+        music.innerText="Mute";
+    }
 })
 
 function addScore(){
