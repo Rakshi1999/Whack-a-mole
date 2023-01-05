@@ -112,11 +112,13 @@ music.addEventListener("click",()=>{
        gameBGMusic.pause();
        gameOverBG.pause();
        music.innerText="Un-Mute";
+       music.style.backgroundColor = "rgba(93, 147, 209,0.2)";
     }else{
         muted = false;
         // gameBGMusic.pause();
         // gameOverBG.pause();
         music.innerText="Mute";
+        music.style.backgroundColor = "rgba(93, 147, 209,1)";   
     }
 })
 

@@ -17,6 +17,7 @@ body{
     border-color: whitesmoke;
     box-shadow: 8px 8px 4px gainsboro;
 }
+
 .btn:hover{
     box-shadow: 8px 8px 10px gainsboro;
     color: white;
@@ -28,19 +29,16 @@ body{
 .reset{
     background-color: rgba(229, 20, 62,0.8);
 }
+
+.music{
+    background-color: rgb(93, 147, 209);
+}
 .container{
     width: 450px;
     height: 450px;
     /* outline: 2px solid black; */
     display: flex;
     flex-wrap: wrap;
-}
-
-.hide{
-    display: none;
-}
-#audio{
-    margin: 1rem 0;
 }
 
 .square{
