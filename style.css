@@ -54,6 +54,24 @@ body{
     background-size: contain;
 }
 
+#scoreTable{
+    /* background-color: aquamarine; */
+    min-width: 30vw;
+    padding: 1rem 0.5rem;
+    margin: 1.5rem 0.5rem;
+    outline: 2px solid black;
+}
+
+tr{
+    /* outline: 2px solid black; */
+    text-align: center;
+    margin: 0.5rem 0rem;
+}
+th{
+    border: 2px solid black;
+    margin: 0.5rem 0rem;
+}
+
 @media (max-width:500px) {
     .container{
         width: 300px;

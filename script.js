@@ -9,7 +9,7 @@ let leftTimeId;
 let music = document.getElementById("music");
 const element = document.getElementById("level");
 let moleTimer=750;
-
+let sl=0;
 
 function modeHandler(){
    if(element.value ==="medium"){
@@ -69,6 +69,7 @@ btn.onclick=()=>{
             gameBGMusic.pause();
             gameOverBG.play();
             stop();
+            addScore();
         }
         time.innerText = final;
     },1000)
@@ -105,3 +106,17 @@ let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
 music.addEventListener("click",()=>{
     launchPageBG.pause();
 })
+
+const table = document.getElementById("scoreTable");
+
+function addScore(){
+    let points = document.getElementById("score");
+    let temp =`
+    <tr>
+       <td>${++sl}</td>
+       <td>${points.innerText}</td>
+    </tr>
+    `
+    table.innerHTML += temp;
+}
+
