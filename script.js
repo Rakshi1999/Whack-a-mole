@@ -14,6 +14,7 @@ let sl=0;
 let clickBGMusic = new Audio("pixel-death-66829.mp3");
 let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
 let muted = false;
+const scoreArray = [];
 
 function modeHandler(){
    if(element.value ==="medium"){
@@ -124,12 +125,23 @@ music.addEventListener("click",()=>{
 
 function addScore(){
     let points = document.getElementById("score");
-    let temp =`
-    <tr>
-       <td>${++sl}</td>
-       <td>${points.innerText}</td>
-    </tr>
+    scoreArray.push(Number.parseInt(points.innerText));
+    scoreArray.sort(function(a, b){return b - a});
+    console.log(scoreArray);
+    table.innerHTML = `
+          <tr>
+            <th>sl</th>
+            <th>Score</th>
+         </tr>
     `
-    table.innerHTML += temp;
+    scoreArray.forEach((ele,index)=>{
+       let temp =`
+          <tr>
+            <td>${index+1}</td>
+            <td>${ele}</td>
+          </tr>
+          `
+          table.innerHTML+=temp;
+        })
 }
 
