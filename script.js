@@ -121,11 +121,24 @@ music.addEventListener("click",()=>{
     }
 })
 
+function storeTheScore(arr){
+    let topScore =JSON.parse(localStorage.getItem("score"));
+    if(topScore){
+        if(topScore<arr[0]){
+            localStorage.setItem("score",JSON.stringify(arr[0]));
+            document.getElementById("local-score").innerText=arr[0];
+        }
+    }else{
+        localStorage.setItem("score",JSON.stringify(arr[0]));
+    }
+}
+
 function addScore(){
     let points = document.getElementById("score");
     scoreArray.push(Number.parseInt(points.innerText));
     scoreArray.sort(function(a, b){return b - a});
     console.log(scoreArray);
+    storeTheScore(scoreArray);
     table.innerHTML = `
           <tr>
             <th>sl</th>
@@ -142,4 +155,11 @@ function addScore(){
         table.innerHTML+=temp;
     })
 }
+
+window.addEventListener("load",()=>{
+    let localScore = JSON.parse(localStorage.getItem("score"));
+    if(localScore){
+        document.getElementById("local-score").innerText=localScore;
+    }
+})
 

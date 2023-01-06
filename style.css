@@ -4,7 +4,22 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: #41B3A3; */
+    background-color: #85DCBB;
 }
+
+#top-score{
+    background-color: aqua;
+    position: absolute;
+    top: 32%;
+    right: 10%;
+}
+
+select{
+    font-weight: 600;
+    font-size: 15px;
+}
+
 h1{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 999;
@@ -50,7 +65,7 @@ h1{
     width: 150px;
     height: 150px;
     outline: 2px solid rgb(255, 255, 255);
-    background-color:grey;
+    background-color:#553D67;
 }
 .mole{
     background-image: url(https://scontent.fblr17-1.fna.fbcdn.net/v/t1.18169-9/17759925_1290417197703318_8168277042705458975_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=S2SFdGo0i48AX8It6br&_nc_ht=scontent.fblr17-1.fna&oh=00_AfAfEprajrr_mIiDIvYs3fFcuopd_RboUxiTFmX51TJgCA&oe=63C64DBC);
