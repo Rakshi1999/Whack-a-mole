@@ -55,8 +55,8 @@ select{
     background-color: rgb(93, 147, 209);
 }
 .container{
-    width: 450px;
-    height: 450px;
+    width: 490px;
+    height: 480px;
     /* outline: 2px solid black; */
     display: flex;
     flex-wrap: wrap;
@@ -65,10 +65,12 @@ select{
 .square{
     width: 150px;
     height: 150px;
+    margin: 0rem 0.2rem;
     outline: 2px solid rgb(255, 255, 255);
     /* background-color:#7395AE; */
     /* background-color: #950740; */
     background-color: #4E4E50;
+    transition: 0.1s ease-in-out;
 }
 .mole{
     background-image: url(https://scontent.fblr17-1.fna.fbcdn.net/v/t1.18169-9/17759925_1290417197703318_8168277042705458975_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=S2SFdGo0i48AX8It6br&_nc_ht=scontent.fblr17-1.fna&oh=00_AfAfEprajrr_mIiDIvYs3fFcuopd_RboUxiTFmX51TJgCA&oe=63C64DBC);
@@ -106,19 +108,31 @@ th{
     line-height: 1em;
 }
 
+
+.square:hover{
+    width: 160px;
+    height: 160px;
+}
+
 @media (max-width:500px) {
     .container{
-        width: 300px;
-        height: 300px;
+        width: 350px;
+        height: 350px;
     }
+
     .square{
         width: 100px;
         height: 100px;
-        outline: 2px solid rgb(255, 255, 255);
+        margin: 0rem 0.2rem;
         background-color:grey;
+    }
+    
+    .square:hover{
+        width: 110px;
+        height: 110px;
     }
 
     .ml15 {
         font-size: 1.5rem;
-      }
+    }
 }

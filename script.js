@@ -22,7 +22,7 @@ anime.timeline({loop: false})
     opacity: [0,1],
     easing: "easeOutCirc",
     duration: 3500,
-    delay: (el, i) => 800 * i
+    delay: (el,i) => 800 * i
 })
 
 window.addEventListener("load",()=>{
