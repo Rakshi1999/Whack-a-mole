@@ -1,19 +1,19 @@
 // javascript code goes here
 const btn = document.getElementById("start");
 const resetbtn = document.getElementById("reset");
-let timerId;
 const divs = document.querySelectorAll(".square");
 const time = document.getElementById("time-left");
-let leftTimeId;
-let music = document.getElementById("music");
+const music = document.getElementById("music");
 const element = document.getElementById("level");
 const table = document.getElementById("scoreTable");
-let moleTimer=750;
-let sl=0;
 const clickBGMusic = new Audio("pixel-death-66829.mp3");
 const gameOverBG = new Audio("videogame-death-sound-43894.mp3");
-let muted = false;
 const scoreArray = [];
+let muted = false;
+let timerId;
+let leftTimeId;
+let moleTimer=750;
+let sl=0;
 
 window.addEventListener("load",()=>{
     music.innerText = "Mute";
