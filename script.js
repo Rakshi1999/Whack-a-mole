@@ -2,7 +2,6 @@
 const btn = document.getElementById("start");
 const resetbtn = document.getElementById("reset");
 let timerId;
-const box = document.getElementsByClassName("square");
 const divs = document.querySelectorAll(".square");
 const time = document.getElementById("time-left");
 let leftTimeId;
@@ -11,10 +10,14 @@ const element = document.getElementById("level");
 const table = document.getElementById("scoreTable");
 let moleTimer=750;
 let sl=0;
-let clickBGMusic = new Audio("pixel-death-66829.mp3");
-let gameOverBG = new Audio("videogame-death-sound-43894.mp3");
+const clickBGMusic = new Audio("pixel-death-66829.mp3");
+const gameOverBG = new Audio("videogame-death-sound-43894.mp3");
 let muted = false;
 const scoreArray = [];
+
+window.addEventListener("load",()=>{
+    music.innerText = "Mute";
+})
 
 function modeHandler(){
    if(element.value ==="medium"){
@@ -33,9 +36,9 @@ divs.forEach((div)=>{
 function click(div){
         let elem = document.getElementById(`${div.id}`);
         let bool = elem.classList.contains("mole");
-        console.log(bool);
+        // console.log(bool);
         if(bool){
-            console.log(parseInt(time.innerText));
+            // console.log(parseInt(time.innerText));
             if(parseInt(time.innerText)<=0){
                 alert("gaveOver");
             }else{
@@ -50,11 +53,11 @@ function click(div){
 }
 
 function changeMole(){
-    for(let i=0;i<box.length;i++){
-        box[i].classList.remove("mole");
-    }
+    divs.forEach((div)=>{
+        div.classList.remove("mole")
+    });
     let random = Math.floor(Math.random()*9);
-    box[random].classList.add("mole");
+    divs[random].classList.add("mole");
 }
 
 function stop(){
@@ -69,10 +72,10 @@ btn.onclick=()=>{
     leftTimeId = setInterval(()=>{
         let initial = time.innerText;
         let final = parseInt(initial) - 1;
-        if(final<=5){
+        if(final<=10){
             time.style.color="red";
         }
-        if(final<=0){
+        if(final==0){
             if(!muted){
                 gameBGMusic.pause();
                 gameOverBG.play();
@@ -85,8 +88,8 @@ btn.onclick=()=>{
 }
 resetbtn.onclick=()=>{
     clearInterval(timerId);
-    for(let i=0;i<box.length;i++){
-        box[i].classList.remove("mole");
+    for(let i=0;i<divs.length;i++){
+        divs[i].classList.remove("mole");
     }
     clearInterval(leftTimeId);
     time.innerText=42;
@@ -104,9 +107,6 @@ btn.addEventListener("click",()=>{
     }
 });
 
-window.addEventListener("load",()=>{
-    music.innerText = "Mute";
-})
 music.addEventListener("click",()=>{
     if(!muted){
        muted = true;
@@ -116,8 +116,6 @@ music.addEventListener("click",()=>{
        music.style.backgroundColor = "rgba(93, 147, 209,0.2)";
     }else{
         muted = false;
-        // gameBGMusic.pause();
-        // gameOverBG.pause();
         music.innerText="Mute";
         music.style.backgroundColor = "rgba(93, 147, 209,1)";   
     }
@@ -135,13 +133,13 @@ function addScore(){
          </tr>
     `
     scoreArray.forEach((ele,index)=>{
-       let temp =`
-          <tr>
-            <td>${index+1}</td>
-            <td>${ele}</td>
-          </tr>
-          `
-          table.innerHTML+=temp;
-        })
+     let temp =`
+        <tr>
+          <td>${index+1}</td>
+          <td>${ele}</td>
+        </tr>
+        `
+        table.innerHTML+=temp;
+    })
 }
 
