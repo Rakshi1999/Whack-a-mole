@@ -15,6 +15,16 @@ let leftTimeId;
 let moleTimer=750;
 let sl=0;
 
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml15 .word',
+    scale: [20,1],
+    opacity: [0,1],
+    easing: "easeOutCirc",
+    duration: 3500,
+    delay: (el, i) => 800 * i
+})
+
 window.addEventListener("load",()=>{
     music.innerText = "Mute";
 })
@@ -162,4 +172,5 @@ window.addEventListener("load",()=>{
         document.getElementById("local-score").innerText=localScore;
     }
 })
+
 

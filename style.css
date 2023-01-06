@@ -20,11 +20,12 @@ select{
     font-size: 15px;
 }
 
-h1{
+#title{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 999;
     text-transform: capitalize;
     text-decoration:underline;
+    color: #553D67;
 }
 .bt{
     margin: 1.5rem;
@@ -65,7 +66,9 @@ h1{
     width: 150px;
     height: 150px;
     outline: 2px solid rgb(255, 255, 255);
-    background-color:#553D67;
+    /* background-color:#7395AE; */
+    /* background-color: #950740; */
+    background-color: #4E4E50;
 }
 .mole{
     background-image: url(https://scontent.fblr17-1.fna.fbcdn.net/v/t1.18169-9/17759925_1290417197703318_8168277042705458975_n.png?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=S2SFdGo0i48AX8It6br&_nc_ht=scontent.fblr17-1.fna&oh=00_AfAfEprajrr_mIiDIvYs3fFcuopd_RboUxiTFmX51TJgCA&oe=63C64DBC);
@@ -89,6 +92,18 @@ th{
     border: 2px solid black;
     margin: 0.5rem 0rem;
 }
+.ml15 {
+    font-family: 'Akronim';
+    font-weight: 900;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+  }
+  
+.ml15 .word {
+    display: inline-block;
+    line-height: 1em;
+}
 
 @media (max-width:500px) {
     .container{
@@ -101,4 +116,8 @@ th{
         outline: 2px solid rgb(255, 255, 255);
         background-color:grey;
     }
+
+    .ml15 {
+        font-size: 1.5rem;
+      }
 }
