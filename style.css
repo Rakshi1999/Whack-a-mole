@@ -141,7 +141,12 @@ th{
         width: 350px;
         height: 350px;
     }
-
+    .btn{
+        margin: 0rem 0.2rem;
+    }
+    .btn:hover{
+        width:90px
+    }
     .square{
         width: 100px;
         height: 100px;
