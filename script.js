@@ -138,26 +138,29 @@ music.addEventListener("click",()=>{
 })
 
 function storeTheScore(arr){
-    let topScore =JSON.parse(localStorage.getItem("score"));
+    let topScore =JSON.parse(localStorage.getItem("userScoreLocal"));
 
     if(topScore){
         arr.forEach((obj)=>{
             if(obj.userLevel==="Hard"){
                 if(topScore.Hlevel<obj.userPoints){
                     topScore.Hlevel = obj.userPoints;
+                    document.getElementById("local-hard-score").innerText=topScore.Hlevel;
                 }
             }else if(obj.userLevel==="Medium"){
                 if(topScore.Mlevel<obj.userPoints){
                     topScore.Mlevel = obj.userPoints;
+                    document.getElementById("local-medium-score").innerText=topScore.Mlevel;
                 }
             }else{
                 if(topScore.Elevel<obj.userPoints){
                     topScore.Elevel = obj.userPoints;
-                }   
+                    document.getElementById("local-easy-score").innerText=topScore.Elevel;
+                }
             }
         })
 
-        localStorage.setItem("score",JSON.stringify(topScore));
+        localStorage.setItem("userScoreLocal",JSON.stringify(topScore));
 
     }else{
         let tempObj = {
@@ -174,8 +177,10 @@ function storeTheScore(arr){
                 tempObj.Elevel = obj.userPoints;
             }
         })
-
-        localStorage.setItem("score",JSON.stringify(tempObj));
+        localStorage.setItem("userScoreLocal",JSON.stringify(tempObj));
+        document.getElementById("local-hard-score").innerText=tempObj.Hlevel;
+        document.getElementById("local-medium-score").innerText=tempObj.Mlevel;
+        document.getElementById("local-easy-score").innerText=tempObj.Elevel;
     }
 }
 
@@ -209,7 +214,7 @@ function addScore(){
 }
 
 window.addEventListener("load",()=>{
-    let localScore = JSON.parse(localStorage.getItem("score"));
+    let localScore = JSON.parse(localStorage.getItem("userScoreLocal"));
     if(localScore){
         document.getElementById("local-hard-score").innerText=localScore.Hlevel;
         document.getElementById("local-medium-score").innerText=localScore.Mlevel;
