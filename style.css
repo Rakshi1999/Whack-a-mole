@@ -7,12 +7,21 @@ body{
     /* background-color: #41B3A3; */
     background-color: #85DCBB;
 }
-
+#highestScoreTitle{
+    text-transform: uppercase;
+    margin: 0.2rem 0.1rem;
+}
 #top-score{
+    padding: 0.2rem 0.1rem;
+    text-align: center;
+    width: 130px;
     background-color: aqua;
     position: absolute;
     top: 32%;
     right: 10%;
+}
+#top-score div{
+    margin: 0.2rem 0rem;
 }
 
 select{
@@ -36,7 +45,7 @@ select{
     border-radius: 5px;
     font-weight: 700;
     border-color: whitesmoke;
-    box-shadow: 8px 8px 4px gainsboro;
+    box-shadow: 4px 4px 5px rgb(231, 229, 229);
 }
 
 .btn:hover{
@@ -56,9 +65,11 @@ select{
 }
 .container{
     width: 490px;
-    height: 480px;
+    height: 490px;
     /* outline: 2px solid black; */
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -101,8 +112,8 @@ th{
     text-transform: uppercase;
     letter-spacing: 0.5em;
     color: #553D67;
-  }
-  
+}
+
 .ml15 .word {
     display: inline-block;
     line-height: 1em;
@@ -126,7 +137,7 @@ th{
         margin: 0rem 0.2rem;
         background-color:grey;
     }
-    
+
     .square:hover{
         width: 110px;
         height: 110px;

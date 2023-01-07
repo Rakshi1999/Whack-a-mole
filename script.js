@@ -14,6 +14,7 @@ let timerId;
 let leftTimeId;
 let moleTimer=750;
 let sl=0;
+let level = "Easy";
 
 anime.timeline({loop: false})
   .add({
@@ -25,6 +26,8 @@ anime.timeline({loop: false})
     delay: (el,i) => 800 * i
 })
 
+
+
 window.addEventListener("load",()=>{
     music.innerText = "Mute";
 })
@@ -32,10 +35,13 @@ window.addEventListener("load",()=>{
 function modeHandler(){
    if(element.value ==="medium"){
     moleTimer=575;
+    level="Medium";
    }else if(element.value === "hard"){
     moleTimer=350;
+    level="Hard";
    }else{
     moleTimer=750;
+    level="Easy";
    }
 }
 
@@ -144,22 +150,28 @@ function storeTheScore(arr){
 }
 
 function addScore(){
-    let points = document.getElementById("score");
-    scoreArray.push(Number.parseInt(points.innerText));
-    scoreArray.sort(function(a, b){return b - a});
+    let points = document.getElementById("score").innerText;
+    let obj = {
+        userPoints: Number.parseInt(points),
+        userLevel:level,
+    }
+    scoreArray.push(obj);
+    scoreArray.sort(function(a, b){return b.userPoints - a.userPoints});
     console.log(scoreArray);
     storeTheScore(scoreArray);
     table.innerHTML = `
           <tr>
-            <th>sl</th>
+            <th>Rank</th>
             <th>Score</th>
+            <th>Level</th>
          </tr>
     `
-    scoreArray.forEach((ele,index)=>{
+    scoreArray.forEach((obj,index)=>{
      let temp =`
         <tr>
           <td>${index+1}</td>
-          <td>${ele}</td>
+          <td>${obj.userPoints}</td>
+          <td>${obj.userLevel}</td>
         </tr>
         `
         table.innerHTML+=temp;
