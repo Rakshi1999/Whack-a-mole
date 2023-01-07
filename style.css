@@ -141,6 +141,15 @@ th{
         width: 350px;
         height: 350px;
     }
+    .points{
+        /* background-color: #553D67; */
+        position: relative;
+        left: 100px;
+    }
+    .timer{
+        position: relative;
+        left: 100px;
+    }
     .btn{
         margin: 0rem 0.2rem;
     }
