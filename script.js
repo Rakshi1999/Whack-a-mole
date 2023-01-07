@@ -139,13 +139,43 @@ music.addEventListener("click",()=>{
 
 function storeTheScore(arr){
     let topScore =JSON.parse(localStorage.getItem("score"));
+
     if(topScore){
-        if(topScore<arr[0]){
-            localStorage.setItem("score",JSON.stringify(arr[0]));
-            document.getElementById("local-score").innerText=arr[0];
-        }
+        arr.forEach((obj)=>{
+            if(obj.userLevel==="Hard"){
+                if(topScore.Hlevel<obj.userPoints){
+                    topScore.Hlevel = obj.userPoints;
+                }
+            }else if(obj.userLevel==="Medium"){
+                if(topScore.Mlevel<obj.userPoints){
+                    topScore.Mlevel = obj.userPoints;
+                }
+            }else{
+                if(topScore.Elevel<obj.userPoints){
+                    topScore.Elevel = obj.userPoints;
+                }   
+            }
+        })
+
+        localStorage.setItem("score",JSON.stringify(topScore));
+
     }else{
-        localStorage.setItem("score",JSON.stringify(arr[0]));
+        let tempObj = {
+            Hlevel:0,
+            Mlevel:0,
+            Elevel:0,
+        };
+        arr.forEach((obj)=>{
+            if(obj.userLevel==="Hard"){
+                tempObj.Hlevel = obj.userPoints;
+            }else if(obj.userLevel==="Medium"){
+                tempObj.Mlevel = obj.userPoints;
+            }else{
+                tempObj.Elevel = obj.userPoints;
+            }
+        })
+
+        localStorage.setItem("score",JSON.stringify(tempObj));
     }
 }
 
@@ -181,7 +211,9 @@ function addScore(){
 window.addEventListener("load",()=>{
     let localScore = JSON.parse(localStorage.getItem("score"));
     if(localScore){
-        document.getElementById("local-score").innerText=localScore;
+        document.getElementById("local-hard-score").innerText=localScore.Hlevel;
+        document.getElementById("local-medium-score").innerText=localScore.Mlevel;
+        document.getElementById("local-easy-score").innerText=localScore.Elevel;
     }
 })
 
