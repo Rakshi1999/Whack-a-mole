@@ -214,6 +214,10 @@ window.addEventListener("load",()=>{
         document.getElementById("local-hard-score").innerText=localScore.Hlevel;
         document.getElementById("local-medium-score").innerText=localScore.Mlevel;
         document.getElementById("local-easy-score").innerText=localScore.Elevel;
+    }else{
+        document.getElementById("local-hard-score").innerText=0;
+        document.getElementById("local-medium-score").innerText=0;
+        document.getElementById("local-easy-score").innerText=0;
     }
 })
 
