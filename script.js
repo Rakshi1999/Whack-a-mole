@@ -19,7 +19,7 @@ let level = "Easy";
 anime.timeline({loop: false})
   .add({
     targets: '.ml15 .word',
-    scale: [20,1],
+    scale: [10,1],
     opacity: [0,1],
     easing: "easeOutCirc",
     duration: 3500,
@@ -225,5 +225,3 @@ window.addEventListener("load",()=>{
         document.getElementById("local-easy-score").innerText=0;
     }
 })
-
-

@@ -37,13 +37,13 @@ select{
     font-size: 15px;
 }
 
-#title{
+/* #title{
     font-family: 'Courier New', Courier, monospace;
     font-weight: 999;
     text-transform: capitalize;
     text-decoration:underline;
     color: #553D67;
-}
+} */
 .bt{
     margin: 1.5rem;
 }
@@ -123,6 +123,13 @@ th{
     text-transform: uppercase;
     letter-spacing: 0.5em;
     color: #553D67;
+    /* text-shadow: 2px 2px 1px #4E4E50; */
+    transition: 0.5s ease-in-out;
+}
+
+.ml15:hover{
+    color: #4E4E50;
+    text-shadow:5px 5px 10px #553D67;
 }
 
 .ml15 .word {
@@ -134,6 +141,7 @@ th{
 .square:hover{
     width: 160px;
     height: 160px;
+    background-color: rgb(93, 147, 209);
 }
 
 @media (max-width:500px) {
