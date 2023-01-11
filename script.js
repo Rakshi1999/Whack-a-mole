@@ -16,15 +16,15 @@ let moleTimer=750;
 let sl=0;
 let level = "Easy";
 
-anime.timeline({loop: false})
-  .add({
-    targets: '.ml15 .word',
-    scale: [10,1],
-    opacity: [0,1],
-    easing: "easeOutCirc",
-    duration: 3500,
-    delay: (el,i) => 800 * i
-})
+// anime.timeline({loop: false})
+//   .add({
+//     targets: '.ml15 .word',
+//     scale: [10,1],
+//     opacity: [0,1],
+//     easing: "easeOutCirc",
+//     duration: 3500,
+//     delay: (el,i) => 800 * i
+// })
 
 
 
