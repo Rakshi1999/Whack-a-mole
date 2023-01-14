@@ -61,9 +61,9 @@ function click(div){
             let val = document.getElementById("score");
             let final = (parseInt(val.innerText))+1;
             val.innerText=final;
-            if(!muted){
-             clickBGMusic.play();
-            }
+             if(!muted){
+               clickBGMusic.play();
+              }
             }
         }
 }
